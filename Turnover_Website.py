@@ -8,7 +8,7 @@ st.title("Prediksi Otomatis dari Dataset")
 
 # Load model statis dari file
 with open("model.pkl", "wb") as model_file:
-    pickle.dump(svc_model, model_file)
+    pickle.dump(rf_model, model_file)
 
 st.subheader("Formulir Input Manual untuk Prediksi")
 
