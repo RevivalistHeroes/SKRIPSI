@@ -3,17 +3,14 @@ import pandas as pd
 import numpy as np
 import pickle
 
-
 # Konfigurasi halaman
 st.set_page_config(page_title="Aplikasi Prediksi", layout="wide")
 st.title("Prediksi Otomatis dari Dataset")
-
 
 # Load model statis dari file
 MODEL_PATH = "model.pkl"
 with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
-
 
 st.subheader("Formulir Input Manual untuk Prediksi")
 
@@ -57,6 +54,9 @@ if submitted:
             if col not in input_encoded.columns:
                 input_encoded[col] = 0
         input_encoded = input_encoded[model.feature_names_in_]
+    else:
+        # Jika model tidak memiliki feature_names_in_, pastikan kolom sesuai
+        input_encoded = input_encoded.reindex(columns=model.feature_names_, fill_value=0)
 
     # Prediksi
     pred = model.predict(input_encoded)[0]
