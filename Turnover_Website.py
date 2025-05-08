@@ -12,7 +12,7 @@ st.title("Prediksi Otomatis dari Dataset")
 # Load model statis dari file
 MODEL_PATH = "model.pkl"
 with open(MODEL_PATH, "rb") as f:
-    pickle.dump(MODEL_PATH, model_file)
+    pickle.dump(MODEL_PATH, model)
 
 st.subheader("Formulir Input Manual untuk Prediksi")
 
