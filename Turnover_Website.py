@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import sklearn
 
 
 # Konfigurasi halaman
@@ -12,7 +11,7 @@ st.title("Prediksi Otomatis dari Dataset")
 # Load model statis dari file
 rf_model = "model.pkl"
 with open(rf_model, "rb") as f:
-    model = pickle.load(f)
+    rf_model = pickle.load(f)
 
 st.subheader("Formulir Input Manual untuk Prediksi")
 
