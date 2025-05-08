@@ -1,19 +1,16 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from sklearn.ensemble import RandomForestClassifier
 
 
 # Konfigurasi halaman
 st.set_page_config(page_title="Aplikasi Prediksi", layout="wide")
 st.title("Prediksi Otomatis dari Dataset")
 
-rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
-rf_model.fit(X_train, y_train)
 
 # Load model statis dari file
 MODEL_PATH = "model.pkl"
-with open(rf_model, "rb") as f:
+with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
 
 st.subheader("Formulir Input Manual untuk Prediksi")
