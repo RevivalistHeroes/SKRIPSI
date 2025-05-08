@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import sklearn
 
 # Konfigurasi halaman
 st.set_page_config(page_title="Aplikasi Prediksi", layout="wide")
