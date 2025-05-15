@@ -17,14 +17,15 @@ st.markdown("""
         color: #2f4f4f;
         text-align: center;
     }
-    .st.form_submit_button>button {
-        background-color: #ffd54f;
-        color: #333;
-        font-size: 15px;
-        font-weight: bold;
-        border-radius: 8px;
-        padding: 10px 20px;
-        margin-top: 10px;
+    button[kind="primary"], button[type="submit"] {
+        background-color: #4b8f74 !important;
+        color: white !important;
+        font-size: 15px !important;
+        font-weight: bold !important;
+        border-radius: 8px !important;
+        padding: 10px 20px !important;
+        margin-top: 10px !important;
+        border: none !important;
     }
     .stSlider > div {
         color: #444;
@@ -42,6 +43,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 # Judul
 st.title("🌿 Prediksi Turnover Karyawan")
