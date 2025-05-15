@@ -25,7 +25,7 @@ st.markdown("""
         font-weight: 500;
     }
     .stTextInput>div>div>input {
-        background-color: white;
+        background-color: 8DD8FF;
     }
     .block-container {
         padding-top: 2rem;
