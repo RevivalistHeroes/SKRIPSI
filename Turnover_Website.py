@@ -5,37 +5,36 @@ import pickle
 # Konfigurasi halaman
 st.set_page_config(page_title="Prediksi Turnover", layout="centered")
 
-# Styling warna-warni dan menarik
+# Gaya soft & nyaman
 st.markdown("""
     <style>
-    body {
-        background-color: #ffffff;
-    }
     .stApp {
-        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        background: linear-gradient(to bottom right, #eafaf1, #f6f8f9);
         font-family: 'Segoe UI', sans-serif;
         color: #333;
-        padding: 2rem;
     }
     h1, h2, h3 {
-        color: #2d2d2d;
+        color: #2f4f4f;
         text-align: center;
     }
     .stButton>button {
-        background-color: #ff6f61;
+        background-color: #6eb48c;
         color: white;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 8px;
         padding: 10px 20px;
         margin-top: 10px;
     }
     .stSlider > div {
-        color: #333;
+        color: #444;
     }
     .stSelectbox label, .stNumberInput label {
-        color: #222;
+        color: #2d2d2d;
         font-weight: 500;
+    }
+    .stTextInput>div>div>input {
+        background-color: white;
     }
     .block-container {
         padding-top: 2rem;
@@ -44,9 +43,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Judul dan deskripsi
-st.title("🌈 Prediksi Turnover Karyawan")
-st.caption("Masukkan data karyawan untuk memprediksi apakah mereka akan keluar dari perusahaan.")
+# Judul
+st.title("🌿 Prediksi Turnover Karyawan")
+st.caption("Masukkan data untuk mengetahui kemungkinan seorang karyawan keluar dari perusahaan.")
 
 # Load model
 MODEL_PATH = "model.pkl"
@@ -96,6 +95,6 @@ if submit:
     pred = model.predict(input_encoded)[0]
 
     if pred == 1:
-        st.error("🚨 Hasil Prediksi: Karyawan **berpotensi keluar** dari perusahaan.")
+        st.error("⚠️ Hasil Prediksi: Karyawan **berpotensi keluar**.")
     else:
-        st.success("🎉 Hasil Prediksi: Karyawan **kemungkinan besar akan tetap tinggal**.")
+        st.success("✅ Hasil Prediksi: Karyawan **kemungkinan tetap tinggal**.")
