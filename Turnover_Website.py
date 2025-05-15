@@ -17,16 +17,6 @@ st.markdown("""
         color: #2f4f4f;
         text-align: center;
     }
-    button[kind="primary"], button[type="submit"] {
-        background-color: #4b8f74 !important;
-        color: white !important;
-        font-size: 15px !important;
-        font-weight: bold !important;
-        border-radius: 8px !important;
-        padding: 10px 20px !important;
-        margin-top: 10px !important;
-        border: none !important;
-    }
     .stSlider > div {
         color: #444;
     }
@@ -40,7 +30,7 @@ st.markdown("""
     .block-container {
         padding-top: 2rem;
         padding-bottom: 2rem;
-    .button {
+    button {
         color : #ffffff
     }
     </style>
