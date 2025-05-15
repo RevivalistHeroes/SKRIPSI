@@ -5,7 +5,7 @@ import pickle
 # Konfigurasi halaman
 st.set_page_config(page_title="Prediksi Turnover", layout="centered")
 
-# Gaya soft & nyaman
+# Styling warna kalem + tombol kontras
 st.markdown("""
     <style>
     .stApp {
@@ -18,7 +18,7 @@ st.markdown("""
         text-align: center;
     }
     .stButton>button {
-        background-color: #6eb48c;
+        background-color: #4b8f74;
         color: white;
         font-size: 15px;
         font-weight: bold;
