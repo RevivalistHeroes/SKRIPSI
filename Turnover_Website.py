@@ -41,7 +41,7 @@ st.markdown("""
         padding-top: 2rem;
         padding-bottom: 2rem;
     .button {
-        color : #fffff
+        color : #ffffff
     }
     </style>
 """, unsafe_allow_html=True)
