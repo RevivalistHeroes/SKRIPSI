@@ -17,7 +17,7 @@ st.markdown("""
         color: #2f4f4f;
         text-align: center;
     }
-    .stButton>button {
+    .st.form_submit_button>button {
         background-color: #ffd54f;
         color: #333;
         font-size: 15px;
@@ -67,7 +67,7 @@ with st.form("form_prediksi"):
     ])
     salary = st.selectbox("Salary Level", ["low", "medium", "high"])
 
-    submit = st.Button("🔍 Prediksi Sekarang")
+    submit = st.form_submit_button("🔍 Prediksi Sekarang")
 
 # Proses prediksi
 if submit:
