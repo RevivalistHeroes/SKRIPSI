@@ -2,41 +2,58 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-# Konfigurasi halaman (tanpa sidebar)
+# Konfigurasi halaman
 st.set_page_config(page_title="Prediksi Turnover", layout="centered")
 
-# Gaya minimalis
+# Styling warna-warni dan menarik
 st.markdown("""
     <style>
+    body {
+        background-color: #ffffff;
+    }
     .stApp {
-        font-family: 'Arial', sans-serif;
-        background-color: #f9f9f9;
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        font-family: 'Segoe UI', sans-serif;
         color: #333;
+        padding: 2rem;
+    }
+    h1, h2, h3 {
+        color: #2d2d2d;
+        text-align: center;
     }
     .stButton>button {
-        background-color: #4CAF50;
+        background-color: #ff6f61;
         color: white;
+        font-size: 16px;
         font-weight: bold;
-        border-radius: 5px;
-        padding: 0.5em 1em;
-        margin-top: 1em;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin-top: 10px;
     }
     .stSlider > div {
         color: #333;
+    }
+    .stSelectbox label, .stNumberInput label {
+        color: #222;
+        font-weight: 500;
+    }
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     </style>
 """, unsafe_allow_html=True)
 
 # Judul dan deskripsi
-st.title("🔍 Prediksi Turnover Karyawan")
-st.caption("Masukkan data karyawan untuk memprediksi apakah ia akan keluar dari perusahaan.")
+st.title("🌈 Prediksi Turnover Karyawan")
+st.caption("Masukkan data karyawan untuk memprediksi apakah mereka akan keluar dari perusahaan.")
 
 # Load model
 MODEL_PATH = "model.pkl"
 with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
 
-# Form input
+# Formulir input
 with st.form("form_prediksi"):
     satisfaction_level = st.slider("Satisfaction Level", 0.0, 1.0, 0.5, step=0.01)
     last_evaluation = st.slider("Last Evaluation", 0.0, 1.0, 0.5, step=0.01)
@@ -51,9 +68,9 @@ with st.form("form_prediksi"):
     ])
     salary = st.selectbox("Salary Level", ["low", "medium", "high"])
 
-    submit = st.form_submit_button("Prediksi")
+    submit = st.form_submit_button("🔍 Prediksi Sekarang")
 
-# Prediksi hasil
+# Proses prediksi
 if submit:
     input_dict = {
         'satisfaction_level': [satisfaction_level],
@@ -79,6 +96,6 @@ if submit:
     pred = model.predict(input_encoded)[0]
 
     if pred == 1:
-        st.error("❌ Hasil Prediksi: Karyawan **berpotensi keluar** dari perusahaan.")
+        st.error("🚨 Hasil Prediksi: Karyawan **berpotensi keluar** dari perusahaan.")
     else:
-        st.success("✅ Hasil Prediksi: Karyawan **kemungkinan akan tetap tinggal**.")
+        st.success("🎉 Hasil Prediksi: Karyawan **kemungkinan besar akan tetap tinggal**.")
