@@ -40,6 +40,8 @@ st.markdown("""
     .block-container {
         padding-top: 2rem;
         padding-bottom: 2rem;
+    .button {
+        color : #fffff
     }
     </style>
 """, unsafe_allow_html=True)
