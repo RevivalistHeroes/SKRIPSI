@@ -38,7 +38,7 @@ st.markdown("""
 
 
 # Judul
-st.title("🌿 Prediksi Turnover Karyawan")
+st.title("📌 Prediksi Turnover Karyawan")
 st.caption("Masukkan data untuk mengetahui kemungkinan seorang karyawan keluar dari perusahaan.")
 
 # Load model
