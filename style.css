@@ -1,0 +1,38 @@
+/* style.css */
+.title-custom {
+    background-color: #e0f7e9;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #1a3e2b;
+    margin-bottom: 20px;
+}
+
+/* Kotak penjelasan */
+.info-box {
+    background-color: #f0fdf4;
+    border: 1px solid #b0e4c5;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #1a3e2b; /* Tambahkan warna teks */
+}
+
+/* Bikin sidebar bisa digunakan untuk absolute positioning */
+section[data-testid="stSidebar"] {
+    position: relative;
+}
+
+/* Watermark tetap di kiri bawah sidebar */
+.sidebar-watermark {
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff0000;
+    opacity: 0.6;
+    z-index: 999;
+}
