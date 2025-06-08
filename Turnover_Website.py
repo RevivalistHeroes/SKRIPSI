@@ -15,7 +15,7 @@ menu = st.sidebar.selectbox("Pilih Halaman", ["Home", "How To Use?", "About Us"]
 
 # === HOME PAGE ===
 if menu == "Home":
-    st.markdown('<div class="title-custom">🌿 Prediksi Turnover Karyawan</div>', unsafe_allow_html=True)
+    st.markdown('<div class="title-custom">📌 Prediksi Turnover Karyawan</div>', unsafe_allow_html=True)
     st.caption("Masukkan data untuk mengetahui kemungkinan seorang karyawan keluar dari perusahaan.")
 
     # Load model
